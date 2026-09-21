@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catatan pribadi saya tentang film The Lord of the Rings: The Return of the King, lengkap dengan pemeran dan rating dari saya.">
+  <title>The Return of the King: Catatan Film Saya</title>
+</head>
+<body>
+
+  <header>
+    <h1>The Return of the King: Catatan Film Saya</h1>
+    <p>Film penutup trilogi The Lord of the Rings, dengan rating 9.1/10 dari saya.</p>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#info-pemeran">Info dan Pemeran</a></li>
+        <li><a href="#cuplikan">Cuplikan Film</a></li>
+        <li><a href="#beri-rating">Beri Rating</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="info-pemeran">
+      <h2>Info dan Pemeran</h2>
+
+      <p>
+        The Return of the King adalah film ketiga dan terakhir dari trilogi The Lord of the Rings.
+        Catatan tontonan saya yang lain ada di
+        <a href="https://letterboxd.com/aleanzho/">profil Letterboxd saya (Aleanzho)</a>.
+      </p>
+
+      <dl>
+        <dt>Sutradara</dt>
+        <dd>Peter Jackson</dd>
+        <dt>Tanggal rilis</dt>
+        <dd><time datetime="2003-12-17">17 Desember 2003</time> (Amerika Serikat)</dd>
+        <dt>Berdasarkan</dt>
+        <dd>Novel The Return of the King (1955) karya J. R. R. Tolkien</dd>
+        <dt>Penghargaan</dt>
+        <dd>Memenangkan 11 Piala Oscar dari 11 nominasi, termasuk Film Terbaik</dd>
+        <dt>Rating saya</dt>
+        <dd>9.1/10</dd>
+      </dl>
+
+      <table>
+        <caption>Enam pemeran utama The Return of the King (2003)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Pemeran</th>
+            <th scope="col">Tokoh</th>
+            <th scope="col">Peran dalam cerita</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Elijah Wood</th>
+            <td>Frodo Baggins</td>
+            <td>Pembawa Cincin yang berjalan menuju Gunung Doom</td>
+          </tr>
+          <tr>
+            <th scope="row">Sean Astin</th>
+            <td>Samwise Gamgee</td>
+            <td>Sahabat setia yang menemani Frodo sampai akhir</td>
+          </tr>
+          <tr>
+            <th scope="row">Viggo Mortensen</th>
+            <td>Aragorn</td>
+            <td>Pewaris takhta Gondor</td>
+          </tr>
+          <tr>
+            <th scope="row">Ian McKellen</th>
+            <td>Gandalf</td>
+            <td>Penyihir yang memimpin pertahanan Minas Tirith</td>
+          </tr>
+          <tr>
+            <th scope="row">Andy Serkis</th>
+            <td>Gollum (Sméagol)</td>
+            <td>Pemandu Frodo yang terobsesi pada Cincin</td>
+          </tr>
+          <tr>
+            <th scope="row">Miranda Otto</th>
+            <td>Éowyn</td>
+            <td>Perempuan Rohan yang ikut bertempur di Pelennor</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figure id="cuplikan">
+        <img src="minas-tirith.webp"
+             alt="Gandalf berjubah putih menunggang kuda putih melintasi padang rumput kering menuju Minas Tirith, kota putih bertingkat di kaki pegunungan berkabut dengan menara tinggi di puncaknya"
+             width="640" height="360" loading="lazy">
+        <figcaption>Gandalf berkuda menuju Minas Tirith. Cuplikan film The Return of the King (New Line Cinema).</figcaption>
+      </figure>
+    </section>
+
+    <section id="beri-rating">
+      <h2>Beri Rating dan Ulasan</h2>
+
+      <form action="/simpan" method="post">
+        <p>
+          <label for="nama-pengunjung">Nama Anda</label>
+          <input type="text" id="nama-pengunjung" name="nama-pengunjung" required minlength="2" maxlength="60">
+        </p>
+        <p>
+          <label for="rating-anda">Rating Anda</label>
+          <input type="number" id="rating-anda" name="rating-anda" required min="0" max="10" step="0.1"
+                 aria-describedby="petunjuk-rating">
+          <small id="petunjuk-rating">Isi 0 sampai 10, boleh desimal, misalnya 9.1.</small>
+        </p>
+        <p>
+          <label for="tokoh-favorit">Tokoh favorit</label>
+          <select id="tokoh-favorit" name="tokoh-favorit">
+            <option value="">Pilih tokoh</option>
+            <option value="frodo">Frodo Baggins</option>
+            <option value="sam">Samwise Gamgee</option>
+            <option value="aragorn">Aragorn</option>
+            <option value="gandalf">Gandalf</option>
+            <option value="gollum">Gollum (Sméagol)</option>
+            <option value="eowyn">Éowyn</option>
+          </select>
+        </p>
+        <p>
+          <label for="ulasan-singkat">Ulasan singkat</label>
+          <textarea id="ulasan-singkat" name="ulasan-singkat" rows="4" cols="40" maxlength="300"></textarea>
+        </p>
+        <button type="submit">Simpan</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>IMADUDDIN IBNULHAKIM · 23523237 · 2026</p>
+  </footer>
+
+</body>
+</html>
