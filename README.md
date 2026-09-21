@@ -18,7 +18,6 @@ Topik halaman saya: film The Lord of the Rings: The Return of the King (2003), b
 <!-- Sesuaikan dengan kenyataan sebelum di-push. -->
 
 Dibantu AI (Claude):
-- mencari data film (sutradara, tanggal rilis, penghargaan, pemeran) dan menyusunnya ke dalam tabel;
 - menulis kerangka `profil.html` (head, landmark, tabel, figure, form);
 - menulis alt text dan keterangan gambar, serta menyesuaikan ukuran gambar.
 
