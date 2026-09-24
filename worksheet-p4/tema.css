@@ -1,0 +1,29 @@
+/* tema.css — hanya menimpa LAPIS SEMANTIK. Tidak ada komponen yang disentuh
+   di sini; itu bukti bahwa token bekerja. */
+
+/* Ikut pengaturan sistem pengguna (malam di Gondor: hitam dan perak) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:      var(--void-950);
+    --color-fg:      var(--silver-100);
+    --color-surface: var(--void-900);
+    --color-border:  var(--void-500);
+    --color-primary: var(--gold-500);   /* lebih terang agar kontras tetap lolos */
+    --color-danger:  var(--red-300);
+    --color-focus:   var(--gold-300);
+    --shadow-1:      0 1px 3px rgba(0, 0, 0, .45);
+  }
+}
+
+/* Pilihan manual lewat tombol pengalih. Ditulis SESUDAH media query
+   supaya menang saat keduanya menyala bersamaan. */
+:root:has(#tema:checked) {
+  --color-bg:      var(--void-950);
+  --color-fg:      var(--silver-100);
+  --color-surface: var(--void-900);
+  --color-border:  var(--void-500);
+  --color-primary: var(--gold-500);
+  --color-danger:  var(--red-300);
+  --color-focus:   var(--gold-300);
+  --shadow-1:      0 1px 3px rgba(0, 0, 0, .45);
+}
