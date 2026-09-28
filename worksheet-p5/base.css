@@ -1,0 +1,28 @@
+/* base.css — berlaku untuk seluruh halaman, jarang disunting setelah ini. */
+
+*, *::before, *::after {
+  box-sizing: border-box;      /* width sudah mencakup padding + border */
+}
+
+* { margin: 0; }               /* hapus jarak bawaan; jarak diatur lewat gap */
+
+img { max-width: 100%; height: auto; display: block; }
+
+html {
+  font-size: 100%;             /* ikuti pengaturan ukuran huruf peramban */
+}
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--color-fg);
+  background: var(--color-bg);
+}                              /* padding halaman pindah ke .page (layout.css) */
+
+h1 { font-size: var(--text-3xl); line-height: 1.15; color: var(--color-primary); }
+h2 { font-size: var(--text-xl);  line-height: 1.25; color: var(--color-primary); }
+h3 { font-size: var(--text-md); }
+
+/* Batasi panjang baris supaya mata mudah berpindah baris */
+main p { max-width: 60ch; }
