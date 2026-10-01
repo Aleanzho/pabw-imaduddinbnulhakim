@@ -1,0 +1,195 @@
+/* komponen.css — kartu, galeri, tabel, gambar, form, tombol, dan keadaan interaktif. */
+
+/* -- galeri: jumlah kolom (1 -> 2) diatur di responsif.css -- */
+
+/* -- kartu: isi tersusun berderet ke bawah (flex) -- */
+.kartu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: var(--card-pad);
+  min-width: 0;
+}
+
+/* kartu di dalam galeri: satu baris grid yang sama, jadi tingginya rata */
+.galeri .kartu {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  min-height: 14rem;
+}
+
+.kartu__isi   { min-width: 0; }
+.kartu__judul { overflow-wrap: anywhere; }
+
+/* baris sejajar di bawah kartu: satu di kiri, satu di kanan */
+.kartu__kaki {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+/* -- daftar info (dl): tiap pasangan dt+dd dibungkus div, jarak lewat gap -- */
+dl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+dl div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+dt { font-weight: 600; }
+dd { color: var(--color-fg); overflow-wrap: anywhere; }
+
+/* -- tabel pemeran -- */
+table { width: 100%; border-collapse: collapse; }
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: var(--space-2);   /* caption bagian dari tabel, tidak ikut gap kartu */
+}
+
+thead th {
+  text-align: left;
+  border-bottom: 2px solid var(--color-border);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+tbody th, tbody td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td { border-bottom: none; }
+
+/* -- figure / gambar -- */
+figcaption {
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+}
+
+/* -- form -- */
+form.kartu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 32rem;
+}
+
+.form-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);          /* jarak label -> isian, seragam */
+}
+
+label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+input, select, textarea {
+  font: inherit;                /* kolom isian ikut ukuran huruf halaman */
+  min-width: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+small {
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+}
+
+button {
+  font: inherit;
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  cursor: pointer;
+}
+
+.kartu__kaki button { align-self: auto; }   /* di baris flex, sejajar tengah dengan teks */
+
+button:hover { opacity: 0.9; }
+
+/* -- keadaan fokus: wajib terlihat untuk pengguna papan ketik -- */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* -- keadaan tidak sah: hanya setelah pengguna mencoba mengisi -- */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+.pesan-galat {
+  display: none;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+.form-kolom:has(input:user-invalid) .pesan-galat,
+.form-kolom:has(select:user-invalid) .pesan-galat,
+.form-kolom:has(textarea:user-invalid) .pesan-galat {
+  display: block;
+}
+
+/* -- tombol pengalih tema (kotak centang disembunyikan, label jadi tombol) -- */
+.pengalih-tema {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tombol-tema {
+  align-self: flex-end;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  cursor: pointer;
+}
+
+/* Teks tombol mengikuti tema yang AKAN dipasang saat diklik */
+.tombol-tema__ke-terang { display: none; }
+
+.pengalih-tema:checked + .tombol-tema .tombol-tema__ke-gelap { display: none; }
+.pengalih-tema:checked + .tombol-tema .tombol-tema__ke-terang { display: inline; }
+
+@media (prefers-color-scheme: dark) {
+  .tombol-tema__ke-gelap { display: none; }
+  .tombol-tema__ke-terang { display: inline; }
+
+  .pengalih-tema:checked + .tombol-tema .tombol-tema__ke-gelap { display: inline; }
+  .pengalih-tema:checked + .tombol-tema .tombol-tema__ke-terang { display: none; }
+}
+
+.pengalih-tema:focus-visible + .tombol-tema {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}

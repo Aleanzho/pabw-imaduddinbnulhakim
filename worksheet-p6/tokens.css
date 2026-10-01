@@ -1,0 +1,55 @@
+/* tokens.css — satu-satunya berkas yang boleh berisi nilai mentah.
+   Komponen lain hanya boleh memakai var() dari lapis semantik di bawah. */
+
+/* LAPIS 1 — primitif: nilai mentah, tidak menyebut peran apa pun */
+:root {
+  --stone-50:   #ECE9E2;  /* batu pucat Minas Tirith di siang hari */
+  --stone-100:  #FFFFFF;
+  --stone-300:  #C9C2B4;
+  --stone-500:  #857E72;  /* batu abu: garis tepi tema terang, lolos 3:1 */
+  --ink-900:    #1F1D1A;
+
+  --void-950:   #0A0A0C;  /* langit malam gelap di Lembar F */
+  --void-900:   #17181B;
+  --void-700:   #34363B;
+  --void-500:   #6B6E75;  /* garis tepi tema gelap, lolos 3:1 */
+  --silver-100: #E6E6E6;
+
+  --gold-700:   #8B5E00;
+  --gold-500:   #D4AF37;
+  --gold-300:   #F2C14E;
+
+  --red-700:    #B00020;
+  --red-300:    #FF6B6B;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+
+  --radius-md:   0.5rem;
+  --radius-full: 999px;
+  --shadow-1:    0 1px 3px rgba(0, 0, 0, .10);
+
+  --text-sm:  0.875rem;
+  --text-md:  1rem;
+  --text-xl:  1.5rem;
+  --text-3xl: 2.25rem;
+}
+
+/* LAPIS 2 — semantik: peran. Ini yang dipakai seluruh komponen.
+   Tema terang (kota di siang hari) adalah nilai bawaan di sini.
+   tema.css akan menimpa BLOK INI SAJA untuk tema gelap. */
+:root {
+  --color-bg:      var(--stone-50);
+  --color-fg:      var(--ink-900);
+  --color-surface: var(--stone-100);
+  --color-border:  var(--stone-500);
+  --color-primary: var(--gold-700);
+  --color-danger:  var(--red-700);
+  --color-focus:   var(--gold-700);
+
+  --card-pad:    var(--space-4);
+  --section-gap: var(--space-6);
+}
