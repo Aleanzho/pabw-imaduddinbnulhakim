@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catatan pribadi saya tentang film The Lord of the Rings: The Return of the King, lengkap dengan pemeran dan rating dari saya.">
+  <title>The Return of the King: Catatan Film Saya</title>
+
+  <!-- urutan ini yang benar: token -> dasar -> tata letak -> komponen -> tema -> responsif -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
+  <link rel="stylesheet" href="responsif.css">
+</head>
+<body>
+  <div class="page">
+
+  <header>
+    <input type="checkbox" id="tema" class="pengalih-tema">
+    <label for="tema" class="tombol-tema">
+      <span class="tombol-tema__ke-gelap">Dark mode</span>
+      <span class="tombol-tema__ke-terang">Light mode</span>
+    </label>
+
+    <div class="navbar">
+      <div class="header-judul">
+        <h1>The Return of the King: Catatan Film Saya</h1>
+        <p>Film penutup trilogi The Lord of the Rings, dengan rating 9.1/10 dari saya.</p>
+      </div>
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#info-pemeran">Info dan Pemeran</a></li>
+          <li><a href="#cuplikan">Cuplikan Film</a></li>
+          <li><a href="#beri-rating">Beri Rating</a></li>
+          <li><a href="#tentang-saya">Tentang Saya</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="info-pemeran">
+      <h2>Info dan Pemeran</h2>
+
+      <div class="isi">
+
+        <div class="kartu sisi">
+          <p class="kartu__isi">
+            The Return of the King adalah film ketiga dan terakhir dari trilogi The Lord of the Rings.
+            Catatan tontonan saya yang lain ada di
+            <a href="https://letterboxd.com/aleanzho/">profil Letterboxd saya (Aleanzho)</a>.
+          </p>
+
+          <dl class="kartu__isi" id="info-film"></dl>
+        </div>
+
+        <div class="galeri utama">
+
+        <div class="kartu">
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Tabel pemeran, dapat digulir mendatar">
+          <table>
+            <caption class="kartu__judul" id="judul-tabel"></caption>
+            <thead>
+              <tr>
+                <th scope="col">Pemeran</th>
+                <th scope="col">Tokoh</th>
+                <th scope="col">Peran dalam cerita</th>
+              </tr>
+            </thead>
+            <tbody id="badan-pemeran"></tbody>
+          </table>
+          </div>
+        </div>
+
+        <figure class="kartu" id="cuplikan">
+          <img src="minas-tirith.webp"
+               alt="Gandalf berjubah putih menunggang kuda putih melintasi padang rumput kering menuju Minas Tirith, kota putih bertingkat di kaki pegunungan berkabut dengan menara tinggi di puncaknya"
+               width="640" height="360" loading="lazy">
+          <figcaption class="kartu__judul">Gandalf berkuda menuju Minas Tirith. Cuplikan film The Return of the King (New Line Cinema).</figcaption>
+        </figure>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="beri-rating">
+      <h2>Beri Rating dan Ulasan</h2>
+
+      <form action="/simpan" method="post" class="kartu">
+        <div class="form-kolom">
+          <label for="nama-pengunjung">Nama Anda</label>
+          <input type="text" id="nama-pengunjung" name="nama-pengunjung" required minlength="2" maxlength="60">
+          <span class="pesan-galat">Nama minimal 2 huruf.</span>
+        </div>
+
+        <div class="form-kolom">
+          <label for="rating-anda">Rating Anda</label>
+          <input type="number" id="rating-anda" name="rating-anda" required min="0" max="10" step="0.1"
+                 aria-describedby="petunjuk-rating">
+          <small id="petunjuk-rating">Isi 0 sampai 10, boleh desimal, misalnya 9.1.</small>
+          <span class="pesan-galat">Isi angka 0 sampai 10.</span>
+        </div>
+
+        <div class="form-kolom">
+          <label for="tokoh-favorit">Tokoh favorit</label>
+          <select id="tokoh-favorit" name="tokoh-favorit">
+            <option value="">Pilih tokoh</option>
+          </select>
+        </div>
+
+        <div class="form-kolom">
+          <label for="ulasan-singkat">Ulasan singkat</label>
+          <textarea id="ulasan-singkat" name="ulasan-singkat" rows="4" cols="40" maxlength="300"></textarea>
+        </div>
+
+        <div class="kartu__kaki">
+          <button type="submit">Simpan</button>
+          <small>Nama dan rating wajib diisi.</small>
+        </div>
+      </form>
+    </section>
+
+    <section id="tentang-saya">
+      <h2>Tentang Pembuat Halaman</h2>
+      <div class="kartu">
+        <p id="perkenalan"></p>
+        <p id="keahlian"></p>
+        <h3>Proyek saya</h3>
+        <ul id="daftar-proyek"></ul>
+        <small id="catatan-proyek"></small>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p id="info-footer"></p>
+  </footer>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
