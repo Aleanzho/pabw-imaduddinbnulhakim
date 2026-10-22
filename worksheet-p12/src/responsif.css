@@ -1,0 +1,68 @@
+/* responsif.css — Pertemuan 6, mobile-first.
+   Dimuat paling akhir (sesudah tema.css). Urutan isi berkas ini sengaja dari
+   layar kecil ke layar besar: gaya dasar dulu, lalu dua titik henti.
+   Semua titik henti memakai min-width dan satuan rem.
+
+   Padanan nama kelas dari lembar worksheet:
+   .content -> .isi (sidebar + konten)     .grid -> .galeri (kartu tabel + gambar) */
+
+
+/* ============================================================
+   1. DASAR: berlaku di semua lebar, ditulis untuk layar sempit.
+      Tanpa media query. Satu kolom.
+   ============================================================ */
+/* Kerangka halaman: satu kolom yang boleh menyusut (minmax(0, 1fr)).
+   Tanpa ini kolom implisit .page bersifat auto dan melebar mengikuti isi
+   terlebar, di sini textarea cols="40" (±366 px), sehingga kepala, isi, dan
+   kaki meluber 40 px pada layar 360 px. */
+.page { grid-template-columns: minmax(0, 1fr); }
+
+.isi {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "sisi"
+    "utama";                    /* sidebar tampil di atas konten */
+  gap: var(--space-6);
+}
+
+.galeri {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+/* Tinggi halaman 100dvh sudah dipasang pada .page di layout.css
+   (kepala dan kaki tetap menempel saat bilah alamat ponsel bergerak). */
+
+
+/* ============================================================
+   2. TITIK HENTI TABLET, 48rem (768 px pada huruf 16 px):
+      galeri menjadi dua kolom.
+   ============================================================ */
+@media (min-width: 48rem) {
+  .galeri { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* ============================================================
+   3. TITIK HENTI DESKTOP, 60rem (960 px pada huruf 16 px):
+      sidebar bersanding dengan konten.
+      Galeri tetap dua kolom karena isinya hanya dua kartu.
+   ============================================================ */
+@media (min-width: 60rem) {
+  .isi {
+    grid-template-columns: 16rem 1fr;
+    grid-template-areas: "sisi utama";
+  }
+}
+
+
+/* ============================================================
+   4. ISI YANG MENYESUAIKAN (tanpa mengubah titik henti)
+      Gambar: sudah dibatasi di base.css (max-width: 100%; height: auto).
+      Teks  : ukuran sudah dalam rem lewat token --text-*.
+   ============================================================ */
+
+/* tabel lebar bergulir di dalam wadahnya, halaman tidak ikut bergeser */
+.table-wrap { overflow-x: auto; }
