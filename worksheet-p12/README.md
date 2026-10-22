@@ -21,9 +21,9 @@ dimorting ke Vue 3 + Vite tanpa mengubah tampilan dan perilakunya.
 
 **Deklarasi penggunaan AI**
 
-Bagian yang dibantu AI: ISI_APA_ADANYA (contoh: draf kode komponen Vue dan penjelasan langkah).
-Bagian yang saya kerjakan sendiri: ISI_APA_ADANYA (contoh: menjalankan semua perintah, memindahkan berkas,
-menguji di peramban, mengisi worksheet dan jawaban tiket keluar).
+Bagian yang dibantu AI: Draf kode komponen Vue dan penjelasan langkah).
+Bagian yang saya kerjakan sendiri: Menjalankan semua perintah, memindahkan berkas,
+menguji di peramban, mengisi worksheet dan jawaban tiket keluar.
 
 ## Menjalankan
 
