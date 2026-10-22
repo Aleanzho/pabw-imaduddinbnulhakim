@@ -1,6 +1,0 @@
-[
-  { "id": 1, "judul": "Halaman Catatan Film Responsif (P6)", "tahun": 2026, "selesai": true, "kategori": "css" },
-  { "id": 2, "judul": "Halaman Data Dinamis dengan JavaScript (P8)", "tahun": 2026, "selesai": true, "kategori": "javascript" },
-  { "id": 3, "judul": "Halaman Interaktif dengan DOM dan Event (P9)", "tahun": 2026, "selesai": true, "kategori": "javascript" },
-  { "id": 4, "judul": "Halaman Data dari fetch dan JSON (P10)", "tahun": 2026, "selesai": false, "kategori": "javascript" }
-]

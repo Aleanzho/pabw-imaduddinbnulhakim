@@ -1,35 +1,5 @@
-# Worksheet P12 — Build Tooling, npm, dan Framework SPA
+# Vue 3 + Vite
 
-Halaman profil "The Return of the King: Catatan Film Saya" dari Pertemuan 11,
-dimorting ke Vue 3 + Vite tanpa mengubah tampilan dan perilakunya.
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Pertemuan 12
-
-**Perkakas (Lembar A)**
-
-| Perintah | Versi |
-| --- | --- |
-| `node -v` | v22.16.0 |
-| `npm -v` | 10.9.2 |
-
-**Ukuran sebelum dan sesudah build (Lembar F)**
-
-| Yang diukur | Sebelum build (`npm run dev`) | Sesudah build (`npm run preview`) |
-| --- | --- | --- |
-| Ukuran seluruh berkas yang dikirim | ISI_DARI_TAB_NETWORK | ISI_DARI_TAB_NETWORK |
-| Jumlah berkas yang dikirim peramban | ISI_DARI_TAB_NETWORK | ISI_DARI_TAB_NETWORK |
-
-**Deklarasi penggunaan AI**
-
-Bagian yang dibantu AI: ISI_APA_ADANYA (contoh: draf kode komponen Vue dan penjelasan langkah).
-Bagian yang saya kerjakan sendiri: ISI_APA_ADANYA (contoh: menjalankan semua perintah, memindahkan berkas,
-menguji di peramban, mengisi worksheet dan jawaban tiket keluar).
-
-## Menjalankan
-
-```
-npm install
-npm run dev       # server pengembangan
-npm run build     # menghasilkan dist/
-npm run preview   # menjalankan isi dist/
-```
+Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
